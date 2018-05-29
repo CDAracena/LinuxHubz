@@ -1,5 +1,5 @@
 require 'sinatra/activerecord'
 
-class BlogPost < ActiveRecord::Base
+class Blog < ActiveRecord::Base
 
 end

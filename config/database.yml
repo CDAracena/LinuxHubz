@@ -8,4 +8,4 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: Rumblr
+  database: LinuxHubz

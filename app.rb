@@ -3,7 +3,7 @@ require './models'
 
 
 get('/') do
-
+  @blogposts = Blog.all
   erb (:index)
 end
 
@@ -11,6 +11,12 @@ end
 get('/create') do
 
   erb(:add)
+end
+
+post ('/create/new') do
+  Blog.create(name: params[:name], description: params[:description])
+
+  redirect '/'
 end
 
 get('/aboutLHubz') do
