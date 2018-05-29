@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="Penguin_2.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+    <title>Linux Hubz</title>
+  </head>
+  <body>
+    <div class="container-fluid headerContainer py-3">
+      <div class="row">
+        <div class="col-lg-6 logoText">
+          <h1>
+            <strong>
+              <a href="/">
+                Linux Hubz:
+                <span class="devHangOutText">Where The REAL Devs Hang.</span>
+              </a>
+            </strong>
+          </h1>
+
+        </div>
+        <div class="col-lg-6 text-center headerLinks">Log-In</div>
+      </div>
+    </div>
+    <div class="sidenav">
+      <img src="linuxfolks.png" class="linuxPenguinImg">
+      <a href="/create" class="sideNavLinks">Create New Post
+      </a>
+      <a href="#" class="sideNavLinks">Edit Posts
+      </a>
+      <a href="/aboutLHubz" class="sideNavLinks">About Linux Hubz
+      </a>
+      <a href="https://www.meetup.com/find/?allMeetups=false&keywords=linux&radius=10&userFreeform=New+York%2C+NY&mcId=z10001&mcName=New+York%2C+NY&sort=default" class="sideNavLinks">Real Life Linux Meetups</a>
+      <a href="https://www.gnome-look.org/" class="sideNavLinks">Distro Styling </a>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

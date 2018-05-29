@@ -1,0 +1,141 @@
+body {
+  background-color: whitesmoke;
+}
+
+.headerContainer {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: whitesmoke;
+  margin-left: 200px;
+}
+
+.linuxPenguinImg {
+  width: 200px;
+  ;
+}
+
+.logoText {
+  color: #fcca53;
+  text-decoration: none;
+}
+
+.headerLinks {
+  font-size: 25px;
+}
+
+.headerLinks:hover {
+  text-decoration: underline;
+  text-decoration-color: #fcca53;
+  cursor: pointer;
+}
+
+.createContainer {
+  background-color: whitesmoke;
+  padding-top: 25px;
+  margin-left: 200px;
+}
+
+a:link {
+  color: #fcca53;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #fcca53;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc12e;
+  text-decoration: none;
+}
+
+a:active {
+  color: #fcca53;
+  text-decoration: none;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 1px #fcca53
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #a6a8aa;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #d1d4d6;
+}
+
+.devHangOutText {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inputBox {
+  box-shadow: 5px 3px lightgrey;
+}
+
+.sideNavLinks {
+  border-bottom: 5px solid #fcca53;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.aboutContainer {
+  margin-left: 200px;
+  font-family: 'Open Sans Condensed', sans-serif
+}
+
+.linuxIsLife {
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sadPenguinText {
+  font-size: 25px;
+  margin-top: 30px;
+}
+
+.sadPenguin {
+  padding-top: 15px;
+  margin: auto;
+  display: block;
+}
+
+.buttonCol {
+  padding-top: 15px;
+}
+
+.buttonCustomize {
+  background-color: #fcca53;
+  border-radius: 10px;
+  color: #323232;
+  width: 200px;
+  cursor: pointer;
+  box-shadow: 3px 4px lightgrey;
+  border-style: unset;
+}
+
+.buttonCustomize:hover {
+  background-color: #101010;
+  color: #fcca53;
+}
+
+.addPageImg {
+  width: 380px;
+}
