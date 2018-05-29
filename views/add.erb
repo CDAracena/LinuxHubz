@@ -1,25 +1,27 @@
 <div class="container createContainer">
+    <form action="/create/new" method="POST">
   <div class="row">
     <div class="col-lg-12 text-center">
       <img src="penguintyping.png" class="addPageImg">
     </div>
 
-    <div class="col-lg-12">
-      Blog Name:
-      <input type="text" class="form-control inputBox" name="name">
-      Blog Description:
-      <textarea class="form-control inputBox" name="description" rows="15"></textarea>
+
+      <div class="col-lg-12">
+        Blog Name:
+        <input type="text" class="form-control inputBox" name="name">
+        Blog Description:
+        <textarea class="form-control inputBox" name="description" rows="15"></textarea>
+      </div>
     </div>
-  </div>
-  <form action="/create/new" method="POST">
-  <div class="row">
+
+    <div class="row">
 
       <div class="col-lg-12 text-center buttonCol">
-        <button class="buttonCustomize">
+        <button type="submit" class="buttonCustomize">
           POST
         </button>
       </div>
 
-  </div>
+    </div>
   </form>
 </div>
