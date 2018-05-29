@@ -11,6 +11,7 @@
     <title>Linux Hubz</title>
   </head>
   <body>
+    <div class="container">
     <div class="container-fluid headerContainer py-3">
       <div class="row">
         <div class="col-lg-6 logoText">
@@ -24,11 +25,13 @@
           </h1>
 
         </div>
-        <div class="col-lg-6 text-center headerLinks">Log-In</div>
+
       </div>
     </div>
     <div class="sidenav">
       <img src="linuxfolks.png" class="linuxPenguinImg">
+      <a href="/loginUser" class="sideNavLinks">Log-In </a>
+      <a href="/usercreate" class="sideNavLinks">Create an Account</a>
       <a href="/create" class="sideNavLinks">Create New Post
       </a>
       <a href="#" class="sideNavLinks">Edit Posts
@@ -40,5 +43,6 @@
     </div>
 
     <%= yield %>
+  </div>
   </body>
 </html>

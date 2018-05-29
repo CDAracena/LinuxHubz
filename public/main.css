@@ -18,8 +18,10 @@ body {
   text-decoration: none;
 }
 
-.headerLinks {
+.headerLinks a:link {
   font-size: 25px;
+  color: black;
+  text-decoration: none;
 }
 
 .headerLinks:hover {
@@ -142,4 +144,29 @@ a:active {
 
 .allPosts {
   margin-left: 200px;
+}
+
+.indexTitle {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.indexDescription {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.indexBlogRows {
+  border: 2px solid #fcca53;
+  box-shadow: 6px 5px lightgrey;
+}
+
+.loginContainer {
+  margin-left: 200px;
+  margin-top: 158px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.loginColumn {
+  border: 5px solid #fcca53cd;
+  border-radius: 2px;
+  height: 315px;
 }
