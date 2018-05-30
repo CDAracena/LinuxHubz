@@ -1,27 +1,44 @@
-<div class="container createContainer">
+<% if @user %>
+
+  <div class="container createContainer">
     <form action="/create/new" method="POST">
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <img src="penguintyping.png" class="addPageImg">
-    </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <img src="penguintyping.png" class="addPageImg">
+        </div>
 
-
-      <div class="col-lg-12">
-        Blog Name:
-        <input type="text" class="form-control inputBox" name="name">
-        Blog Description:
-        <textarea class="form-control inputBox" name="description" rows="15"></textarea>
+        <div class="col-lg-12">
+          Blog Name:
+          <input type="text" class="form-control inputBox" name="name">
+          Blog Description:
+          <textarea class="form-control inputBox" name="description" rows="15"></textarea>
+        </div>
       </div>
-    </div>
 
+      <div class="row">
+
+        <div class="col-lg-12 text-center buttonCol">
+          <button type="submit" class="buttonCustomize">
+            POST
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+<% else %>
+
+  <h1 class="editContainer errorText py-5">
+    <strong>Halt!</strong>...Uh Oh...Seems like you need to <strong>log in</strong> or <strong>create an account! </strong>
+  </h1>
+
+  <div class="container text-center">
     <div class="row">
-
-      <div class="col-lg-12 text-center buttonCol">
-        <button type="submit" class="buttonCustomize">
-          POST
-        </button>
+      <div class="col-lg-12">
+        <img src="spartanTux.png" width="275px">
       </div>
-
     </div>
-  </form>
-</div>
+  </div>
+
+<% end %>

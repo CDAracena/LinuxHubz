@@ -1,6 +1,6 @@
 require 'sinatra'
 require './models'
-require 'shotgun'
+require 'byebug'
 
 set :session_secret, ENV['USER_PASSWORD_SECRET']
 enable :sessions
@@ -11,7 +11,10 @@ get('/') do
 end
 
 
-get('/create') do
+get ('/create') do
+  if session[:user_id] != nil
+    @user = User.find(session[:user_id])
+  end
 
   erb(:add)
 end
@@ -22,10 +25,7 @@ post ('/create/new') do
   redirect '/mydashboard'
 end
 
-get('/aboutLHubz') do
 
-  erb(:about)
-end
 
 get('/usercreate') do
 
@@ -33,7 +33,7 @@ get('/usercreate') do
 end
 
 post ('/usercreate') do
-  existing_user = User.find_by(email: params[:email])
+  existing_user = User.find_by(user_name: params[:user_name])
   if existing_user != nil
     return redirect '/usercreate'
   end
@@ -46,7 +46,7 @@ post ('/usercreate') do
     )
     session[:user_id] = user.id
 
-  redirect '/'
+  redirect '/mydashboard'
 end
 
 get ('/loginUser') do
@@ -56,27 +56,57 @@ end
 
 post ('/loginUser') do
 
-  user_id = session[:user_id]
-  if user_id.nil?
-    return redirect '/'
-  end
+existing_user = User.find_by(user_name: params[:user_name])
+if existing_user.nil?
+   return redirect '/loginUser'
+end
 
-    unless user.password == params[:password]
-      return redirect '/login'
+    unless existing_user.password == params[:password]
+      return redirect '/loginUser'
     end
 
-    session[:user_id] = user.id
+    session[:user_id] = existing_user.id
     redirect '/mydashboard'
 end
 
-get('/mydashboard') do
+get ('/mydashboard') do
 
+  @user_name = User.find_by(session[:user_name])
   user_id = session[:user_id]
   if user_id.nil?
-    return redirect '/'
-    @user = User.find(user_id)
-
-    @blogposts = Blog.all
+    return redirect '/create'
   end
+
+  @user = User.find(user_id)
+  @blogposts = Blog.all
   erb (:dashboard)
+end
+
+get ('/edit/:id') do
+ @blog = Blog.find(params[:id])
+ erb (:edit)
+end
+
+post ('/edit/:id') do
+  blog = Blog.find(params[:id])
+  blog.update(name: params[:name], description: params[:description])
+
+  redirect '/mydashboard'
+end
+
+
+get ('/delete/:id') do
+  blog = Blog.find(params[:id])
+  blog.destroy
+
+  redirect '/mydashboard'
+end
+
+get ('/logout') do
+
+@user_name = User.find(session[:user_id])
+
+ session.clear
+
+erb(:logout)
 end

@@ -170,3 +170,25 @@ a:active {
   border-radius: 2px;
   height: 315px;
 }
+
+.indexContainer {
+  margin-left: 200px;
+}
+
+.editContainer {
+  margin-left: 200px;
+}
+
+.logoutText {
+  font-size: 40px;
+  text-align: center;
+  color: #fcca53;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.errorText {
+  font-size: 40px;
+  text-align: center;
+  color: #93261d;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
