@@ -20,7 +20,8 @@ get ('/create') do
 end
 
 post ('/create/new') do
-  Blog.create(name: params[:name], description: params[:description])
+  Blog.create(name: params[:name], description: params[:description], user_id: session[:user_id])
+
 
   redirect '/mydashboard'
 end
@@ -70,14 +71,12 @@ end
 end
 
 get ('/mydashboard') do
-
-  @user_name = User.find_by(session[:user_name])
   user_id = session[:user_id]
   if user_id.nil?
     return redirect '/create'
   end
 
-  @user = User.find(user_id)
+  @user = User.find(session[:user_id])
   @blogposts = Blog.all
   erb (:dashboard)
 end

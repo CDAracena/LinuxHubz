@@ -1,33 +1,42 @@
-<div class="container allPosts">
+<div class="container allPosts py-5">
   <%if @user %>
-    <h4>
+    <h2 class="userGreeting">
       Welcome
-      <%= @user.user_name %></h4>
+      <%= @user.user_name %></h2>
   <% end %>
+  <div class="row">
+    <div class="col-lg-12">
+      <img src="linuxfam.png">
+    </div>
+  </div>
   <% @blogposts.each do |blog| %>
     <div class="row indexBlogRows">
       <div class="col-lg-12 text-center indexTitle">
-        <h2>
+        <h1>
           <strong>
             <%= blog.name %>
           </strong>
-        </h2>
+        </h1>
       </div>
       <div class="col-lg-12 text-left indexDescription">
         <h3>
           <%= blog.description %>
         </h3>
       </div>
-      <div class="col-lg-6">
-        <button class="buttonCustomize">
+      <% if blog.user_id == @user.id %>
+      <div class="col-lg-6 py-3">
+        <button class="editButton">
           <a href="/edit/<%= blog.id %>">Edit</a>
-        </button class="buttonCustomize">
-      </div>
-      <form action="/delete/:id" method="POST">
-        <button>
-          <a href="/delete/<%= blog.id%>">Delete Post</a>
         </button>
-      </form>
+      </div>
+      <div class="col-lg-6 text-right py-3">
+        <form action="/delete/:id" method="POST">
+          <button class="deleteButton">
+            <a href="/delete/<%= blog.id%>">Delete Post</a>
+          </button>
+        </form>
+      </div>
+      <%end%>
     </div>
 
   <% end %>

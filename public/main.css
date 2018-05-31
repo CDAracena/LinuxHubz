@@ -5,7 +5,7 @@ body {
 .headerContainer {
   font-family: 'Open Sans Condensed', sans-serif;
   background-color: whitesmoke;
-  margin-left: 200px;
+  margin-left: 110px;
 }
 
 .linuxPenguinImg {
@@ -34,6 +34,7 @@ body {
   background-color: whitesmoke;
   padding-top: 25px;
   margin-left: 200px;
+  width: 80%;
 }
 
 a:link {
@@ -57,6 +58,7 @@ a:active {
 }
 
 .sidenav {
+  background-image: url('/ubuntuwallpaper.jpg');
   height: 100%;
   width: 200px;
   position: fixed;
@@ -98,7 +100,7 @@ a:active {
 }
 
 .aboutContainer {
-  margin-left: 200px;
+  margin-left: 50px;
   font-family: 'Open Sans Condensed', sans-serif
 }
 
@@ -143,11 +145,15 @@ a:active {
 }
 
 .allPosts {
-  margin-left: 200px;
+  margin-left: 150px;
+  width: 80%;
 }
 
 .indexTitle {
+  color: #fcca53;
+  text-shadow: 1px 2px #323232;
   font-family: 'Open Sans Condensed', sans-serif;
+  padding-top: 10px;
 }
 
 .indexDescription {
@@ -155,8 +161,16 @@ a:active {
 }
 
 .indexBlogRows {
-  border: 2px solid #fcca53;
+  border: 5px solid #fcca53;
   box-shadow: 6px 5px lightgrey;
+  padding-bottom: 15px;
+  border-radius: 30px 30px 18px 18px;
+  margin-bottom: 35px;
+  width: 90%;
+}
+
+.indexBlogRows:hover {
+  box-shadow: 2px 3px 25px #f4a23d;
 }
 
 .loginContainer {
@@ -169,6 +183,8 @@ a:active {
   border: 5px solid #fcca53cd;
   border-radius: 2px;
   height: 315px;
+  box-shadow: 4px 5px 15px 3px lightgrey;
+  font-size: 20px;
 }
 
 .indexContainer {
@@ -176,7 +192,15 @@ a:active {
 }
 
 .editContainer {
-  margin-left: 200px;
+  margin-left: 180px;
+  color: #7e7e7e;
+  width: 80%;
+}
+
+.editText {
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  font-size: 40px;
 }
 
 .logoutText {
@@ -187,8 +211,61 @@ a:active {
 }
 
 .errorText {
+  margin-top: 50px;
   font-size: 40px;
   text-align: center;
   color: #93261d;
   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.editButton {
+  box-shadow: 3px 3px #b4b5b5;
+  background-color: #323232;
+  border-radius: 10px;
+  width: 150px;
+  border-style: unset;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  border: solid;
+  border-color: #fcca53;
+}
+
+.deleteButton {
+  border-radius: 10px;
+  width: 150px;
+  background-color: #323232;
+}
+
+.deleteButton:hover {
+  background-color: #900707d1;
+  border: solid;
+  border-color: #fcca53;
+}
+
+.userGreeting {
+  padding-bottom: 10px;
+  color: #505050;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+}
+
+.editMainRow {
+  display: flex;
+  justify-content: center;
+}
+
+.tuxLaptopImgCol {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+a.errorRedirects {
+  color: #93261d;
+  cursor: pointer;
+}
+
+a.errorRedirects:hover {
+  text-decoration: underline;
 }

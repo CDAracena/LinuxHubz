@@ -7,10 +7,10 @@
           <img src="penguintyping.png" class="addPageImg">
         </div>
 
-        <div class="col-lg-12">
-          Blog Name:
+        <div class="col-lg-12 text-left">
+          Post Name:
           <input type="text" class="form-control inputBox" name="name">
-          Blog Description:
+          Post Description:
           <textarea class="form-control inputBox" name="description" rows="15"></textarea>
         </div>
       </div>
@@ -30,7 +30,11 @@
 <% else %>
 
   <h1 class="editContainer errorText py-5">
-    <strong>Halt!</strong>...Uh Oh...Seems like you need to <strong>log in</strong> or <strong>create an account! </strong>
+    <strong>Halt!</strong>...Uh Oh...Seems like you need to
+    <strong> <a href="loginUser" class="errorRedirects">log in <a/> </strong>
+    or
+    <strong><a href="/usercreate" class="errorRedirects">create an account! </a>
+    </strong>
   </h1>
 
   <div class="container text-center">
