@@ -77,7 +77,7 @@ get ('/mydashboard') do
   end
 
   @user = User.find(session[:user_id])
-  @blogposts = Blog.all
+  @blogposts = Blog.all.sort{ |a,b| b <=> a }
   erb (:dashboard)
 end
 
