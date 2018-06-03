@@ -109,3 +109,13 @@ get ('/logout') do
 
 erb(:logout)
 end
+
+get ('/deleteAcct') do
+
+  @user = User.find(session[:user_id]).destroy
+
+  session.clear
+
+  redirect '/'
+
+end
