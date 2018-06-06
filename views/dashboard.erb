@@ -24,18 +24,18 @@
         </h3>
       </div>
       <% if blog.user_id == @user.id %>
-      <div class="col-lg-6 py-3">
-        <button class="editButton">
-          <a href="/edit/<%= blog.id %>">Edit</a>
-        </button>
-      </div>
-      <div class="col-lg-6 text-right py-3">
-        <form action="/delete/:id" method="POST">
-          <button class="deleteButton">
-            <a href="/delete/<%= blog.id%>">Delete Post</a>
+        <div class="col-lg-6 py-3">
+          <button class="editButton">
+            <a href="/edit/<%= blog.id %>">Edit</a>
           </button>
-        </form>
-      </div>
+        </div>
+        <div class="col-lg-6 text-right py-3">
+          <form action="/delete/:id" method="POST">
+            <button class="deleteButton">
+              <a href="/delete/<%= blog.id%>">Delete Post</a>
+            </button>
+          </form>
+        </div>
       <%end%>
     </div>
 
