@@ -5,11 +5,12 @@ require 'byebug'
 set :session_secret, ENV['USER_PASSWORD_SECRET']
 enable :sessions
 
+# overall code looks clean and the site looks nice. .erb files should be snake_case instead of camelCase 
+
 get('/') do
 
   erb (:index)
 end
-
 
 get ('/create') do
   if session[:user_id] != nil
@@ -20,17 +21,15 @@ get ('/create') do
 end
 
 post ('/create/new') do
+  # should check the user is logged in here
   Blog.create(name: params[:name], description: params[:description], user_id: session[:user_id])
-
 
   redirect '/mydashboard'
 end
 
-
-
 get('/usercreate') do
 
- erb (:userCreate)
+  erb (:userCreate)
 end
 
 post ('/usercreate') do
@@ -39,13 +38,13 @@ post ('/usercreate') do
     return redirect '/usercreate'
   end
 
-    user = User.create(
-      user_name: params[:user_name],
-      password: params[:password],
-      email: params[:email],
-      birthday: params[:birthday],
-    )
-    session[:user_id] = user.id
+  user = User.create(
+    user_name: params[:user_name],
+    password: params[:password],
+    email: params[:email],
+    birthday: params[:birthday],
+  )
+  session[:user_id] = user.id
 
   redirect '/mydashboard'
 end
@@ -57,17 +56,17 @@ end
 
 post ('/loginUser') do
 
-existing_user = User.find_by(user_name: params[:user_name])
-if existing_user.nil?
-   return redirect '/loginUser'
-end
+  existing_user = User.find_by(user_name: params[:user_name])
+  if existing_user.nil?
+     return redirect '/loginUser'
+  end
 
-    unless existing_user.password == params[:password]
-      return redirect '/loginUser'
-    end
+  unless existing_user.password == params[:password]
+    return redirect '/loginUser'
+  end
 
-    session[:user_id] = existing_user.id
-    redirect '/mydashboard'
+  session[:user_id] = existing_user.id
+  redirect '/mydashboard'
 end
 
 get ('/mydashboard') do
@@ -77,13 +76,14 @@ get ('/mydashboard') do
   end
 
   @user = User.find(session[:user_id])
+  # you can have the database do the sorting for you using ".order" 
   @blogposts = Blog.all.sort{ |a,b| b <=> a }
   erb (:dashboard)
 end
 
 get ('/edit/:id') do
- @blog = Blog.find(params[:id])
- erb (:edit)
+  @blog = Blog.find(params[:id])
+  erb (:edit)
 end
 
 post ('/edit/:id') do
@@ -102,16 +102,15 @@ get ('/delete/:id') do
 end
 
 get ('/logout') do
+  # we don't use @user_name in our view so there's no need for this variable
+  @user_name = User.find(session[:user_id])
 
-@user_name = User.find(session[:user_id])
+  session.clear
 
- session.clear
-
-erb(:logout)
+  erb(:logout)
 end
 
 get ('/deleteAcct') do
-
   @user = User.find(session[:user_id]).destroy
 
   session.clear
